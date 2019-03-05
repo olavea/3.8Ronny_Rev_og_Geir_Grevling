@@ -1,13 +1,26 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import AddKidsToyAnimalForm from "../components/AddKidsToyAnimalForm";
 
+import { Link, graphql } from "gatsby";
 import Layout from "../components/layout";
 import Image from "../components/image";
-
 import SEO from "../components/seo";
 import { rhythm } from "../utils/typography";
 
 class BlogIndex extends React.Component {
+  state = {
+    toyAnimals: {}
+  };
+  addToyAnimal = toyAnimal => {
+    // 1. Take a copy of the existing state
+    const toyAnimals = { ...this.state.toyAnimals };
+    // 2. Add our new toyAnimal to that toyAnimals variable
+    toyAnimals[`toyAnimal${Date.now()}`] = toyAnimal;
+    // 3. Set the new fishes object to state. WTHeck?
+    this.setState({ toyAnimals });
+
+    console.log("adding a toy animal");
+  };
   render() {
     const { data } = this.props;
     const siteTitle = data.site.siteMetadata.title;
@@ -45,6 +58,9 @@ class BlogIndex extends React.Component {
             >
               <Image />
             </div>
+
+            <AddKidsToyAnimalForm addToyAnimal={this.addToyAnimal} />
+
             <SEO
               title="All posts"
               keywords={[`blog`, `gatsby`, `javascript`, `react`]}
