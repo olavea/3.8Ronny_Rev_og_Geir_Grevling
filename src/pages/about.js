@@ -11,14 +11,12 @@ class NotFoundPage extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title="Project Gutenberg's Punky Dunk and the Gold Fish, by
-        Anonymous"
-        />
-        <h1>The Tale of Tom Kitten</h1>
+        <SEO title="Ginger & Pickles" />
+        <h1>The Tale of Ginger & Pickles</h1>
         <div>
           <p>
-            End of Project Gutenberg's The Tale of Tom Kitten by Beatrix Potter.
+            End of Project Gutenberg's The Tale of Ginger & Pickles by Beatrix
+            Potter.
           </p>
 
           <h1>About this OlaBook</h1>
@@ -26,16 +24,13 @@ class NotFoundPage extends React.Component {
             {" "}
             Issues you can resolve:
             <ul>
-              <li>A button for page shifting.</li>
-              <li>A smaller logo at high left hand corner.</li>
-              <li>More illustrations.</li>
               <li>An audio file with a reading of the story.</li>
               <li>A Norwegian translation.</li>
               <li>
                 Go to{" "}
-                <a href="https://github.com/olavea/THE_TALE_OF_TOM_KITTEN_1">
+                <a href="https://github.com/olavea/3.5_Ginger-And-_____-BY-BEATRIX-POTTER">
                   {" "}
-                  https://github.com/olavea/THE_TALE_OF_TOM_KITTEN_1
+                  https://github.com/olavea/3.5_Ginger-And-_____-BY-BEATRIX-POTTER
                 </a>
               </li>
             </ul>
@@ -45,7 +40,10 @@ class NotFoundPage extends React.Component {
             and Gatsby
           </h1>
 
-          <p>Jeg øver på Gatsby med å lage barnebøker</p>
+          <p>
+            I practice GatsbyJS by remaking children's boks with my daughter
+            Lillian (4)
+          </p>
         </div>
 
         <p>
