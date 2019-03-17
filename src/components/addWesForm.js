@@ -19,8 +19,8 @@ class AddKidsToyAnimalForm extends React.Component {
 
       // 14. into state into index
     };
-    // 12. console
-    // 21. 
+    // 12. console what?
+    // 21.
     // 22. console sdding s fish
     this.props.addToyAnimal(toyAnimal);
     //refresh the form
@@ -37,7 +37,7 @@ class AddKidsToyAnimalForm extends React.Component {
           type="text"
           placeholder="Name of Your Kids Fav Toy Animal"
         />
-    
+
         <input
           name="image"
           ref={this.imageRef}

@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: ``,
-    author: `Ola Vea`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Ginger & Pickles & Captain Carrot`,
+    author: `Beatrix Potter`,
+    description: `A children's book with adventurous animals. In Norwegian written language.`,
+    developer: `Ola Vea`,
+    siteUrl: `https://olavea.carrd.co/`,
     social: {
-      twitter: `kylemathews`
+      twitter: `olaholstvea`
     }
   },
   plugins: [
@@ -30,7 +31,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590
+              maxWidth: 1224
             }
           },
           {
@@ -68,6 +69,7 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

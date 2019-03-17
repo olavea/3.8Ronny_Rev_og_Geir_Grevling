@@ -1,11 +1,27 @@
 import React from "react";
+import AddKidsToyAnimalForm from "../components/AddKidsToyAnimalForm";
 import { Link, graphql } from "gatsby";
 
 // import Bio from "../components/bio"
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import { rhythm, scale } from "../utils/typography";
-import logo from "./uniparrot4.png";
+
+import buttonBirdyTop from "./Bee_hummingbird_no.4.png";
+import buttonBirdyBottom from "./Bee_hummingbird_no.png";
+
+import styled from "styled-components";
+
+const BeeHummingBirdWrapper = styled.div`
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  padding-top: 0;
+  img {
+    margin-top: 0;
+    padding-top: 0;
+  }
+`;
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,53 +31,96 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <BeeHummingBirdWrapper>
+          <SEO title={post.frontmatter.title} description={post.excerpt} />
 
-        <p
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1)
-          }}
-        />
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+              margin: 0,
+              marginBottom: 0,
+              paddingBottom: 0
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  <img
+                    style={{
+                      width: "133px"
+                    }}
+                    src={buttonBirdyTop}
+                    alt="Hummingbird button top"
+                  />
+                </Link>
+              )}
+            </li>
+          </ul>
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+              margin: 0
+            }}
+          >
+            <li>
+              <AddKidsToyAnimalForm addToyAnimal={this.addToyAnimal} />
+              {/*// 33. look at page 11*/}
+            </li>
+          </ul>
+          <ul
+            style={{
+              display: `flex`,
+              flexWrap: `wrap`,
+              justifyContent: `space-between`,
+              listStyle: `none`,
+              padding: 0,
+              margin: 0
+            }}
+          >
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
 
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                <img
-                  style={{
-                    width: "133px"
-                  }}
-                  src={logo}
-                  alt="Geff Logo"
-                />
-              </Link>
-            )}
-          </li>
-        </ul>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr
-          style={{
-            marginBottom: rhythm(1)
-          }}
-        />
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  <img
+                    style={{
+                      width: "333px"
+                    }}
+                    src={buttonBirdyBottom}
+                    alt="Hummingbird button bottom Onward!"
+                  />
+                </Link>
+              )}
+            </li>
+          </ul>
+          <hr
+            style={{
+              marginBottom: rhythm(1)
+            }}
+          />
+        </BeeHummingBirdWrapper>
       </Layout>
     );
   }

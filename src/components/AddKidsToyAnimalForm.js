@@ -17,20 +17,20 @@ class AddKidsToyAnimalForm extends React.Component {
   render() {
     return (
       <form className="toyAnimal-edit" onSubmit={this.createToy}>
-        <input
+        {/*        <input
           name="name"
           ref={this.nameRef}
           type="text"
           placeholder="Name of Your Kids Fav Toy Animal"
-        />
+        /> // 34. easier button*/}
         <input
           name="image"
           ref={this.imageRef}
           type="text"
-          placeholder="Photo of Your Kids fav toy animal"
+          placeholder="Ta bilde av fargelegging"
         />
         <button type="submit">
-          + Add Your Kids Fav Toy Animal Name and Photo
+          + Legg til barnets fargelegging på denne siden
         </button>
       </form>
     );
@@ -38,6 +38,8 @@ class AddKidsToyAnimalForm extends React.Component {
 }
 export default AddKidsToyAnimalForm;
 
+//A Photo of Coloring Page
+//Add a Photo of Your Kids coloring page to this page
 // nameRef = React.createRef();
 // imageRef = React.createRef();
 
