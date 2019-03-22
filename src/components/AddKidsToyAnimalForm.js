@@ -3,6 +3,7 @@ import React from "react";
 class AddKidsToyAnimalForm extends React.Component {
   nameRef = React.createRef();
   imageRef = React.createRef();
+
   createToy = event => {
     event.preventDefault();
 

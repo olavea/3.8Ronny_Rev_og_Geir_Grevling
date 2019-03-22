@@ -1,7 +1,7 @@
 backend:
   name: github
   branch: master
-  repo: ...github...
+  repo: olavea/3.8Ronny_Rev_og_Geir_Grevling
 
 media_folder: static/img
 public_folder: /img

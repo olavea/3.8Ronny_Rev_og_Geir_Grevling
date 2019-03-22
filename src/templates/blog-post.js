@@ -36,7 +36,7 @@ class BlogPostTemplate extends React.Component {
     console.log(this.state.coloringPages);
     localStorage.setItem(
       this.props.data.markdownRemark.frontmatter.title,
-      JSON.stringify(this.state.coloringPages)
+      JSON.stringify(this.state.fargelagteArk)
     );
   }
   // Jeg vil at key skal være sidetall = Win!
@@ -44,8 +44,9 @@ class BlogPostTemplate extends React.Component {
   componentWillUnmount() {}
 
   addColoringPage = toyAnimal => {
+    // I. Ta en kopi av fargelagteArk existing state
     const fargelagteArk = { ...this.state.fargelagteArk };
-    // II. legg til Lillians nye fargelegging til variabelen
+    // II. legg til Lillians nye fargelegging til den fargelagteArk variabelen
     fargelagteArk[`toyAnimal${Date.now()}`] = toyAnimal;
     /// III. set den nye fargeleggings objektet til state
     this.setState({ fargelagteArk });
