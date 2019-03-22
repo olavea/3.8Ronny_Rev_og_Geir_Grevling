@@ -24,6 +24,33 @@ const BeeHummingBirdWrapper = styled.div`
 `;
 
 class BlogPostTemplate extends React.Component {
+  state = {
+    fargelagteArk: {}
+  };
+
+  componentDidMount() {
+    //I reinstate our localstorage = Wes#19 6:33
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.coloringPages);
+    localStorage.setItem(
+      this.props.data.markdownRemark.frontmatter.title,
+      JSON.stringify(this.state.coloringPages)
+    );
+  }
+  // Jeg vil at key skal være sidetall = Win!
+
+  componentWillUnmount() {}
+
+  addColoringPage = toyAnimal => {
+    const fargelagteArk = { ...this.state.fargelagteArk };
+    // II. legg til Lillians nye fargelegging til variabelen
+    fargelagteArk[`toyAnimal${Date.now()}`] = toyAnimal;
+    /// III. set den nye fargeleggings objektet til state
+    this.setState({ fargelagteArk });
+  };
+
   render() {
     const post = this.props.data.markdownRemark;
     const siteTitle = this.props.data.site.siteMetadata.title;
@@ -79,7 +106,7 @@ class BlogPostTemplate extends React.Component {
             }}
           >
             <li>
-              <AddKidsToyAnimalForm addToyAnimal={this.addToyAnimal} />
+              <AddKidsToyAnimalForm addColoringPage={this.addColoringPage} />
               {/*// 33. look at page 11*/}
             </li>
           </ul>

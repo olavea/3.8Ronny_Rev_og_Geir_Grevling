@@ -10,19 +10,20 @@ class AddKidsToyAnimalForm extends React.Component {
       name: this.nameRef.current.value,
       image: this.imageRef.current.value
     };
-    this.props.addToyAnimal(toyAnimal);
+    this.props.addColoringPage(toyAnimal);
     //refresh the form
     event.currentTarget.reset();
   };
   render() {
     return (
       <form className="toyAnimal-edit" onSubmit={this.createToy}>
-        {/*        <input
+        <input
           name="name"
           ref={this.nameRef}
           type="text"
           placeholder="Name of Your Kids Fav Toy Animal"
-        /> // 34. easier button*/}
+        />
+
         <input
           name="image"
           ref={this.imageRef}
