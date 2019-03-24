@@ -15,6 +15,9 @@ class AddKidsToyAnimalForm extends React.Component {
     //refresh the form
     event.currentTarget.reset();
   };
+  //this is async look above
+  //async  uploadFile = event => {
+
   render() {
     return (
       <form className="toyAnimal-edit" onSubmit={this.createToy}>
@@ -24,7 +27,15 @@ class AddKidsToyAnimalForm extends React.Component {
           type="text"
           placeholder="Name of Your Kids Fav Toy Animal"
         />
-
+        Image
+        <input
+          type="file"
+          id="file"
+          name="file"
+          placeholder="Last opp et bilde av fargelegging"
+          required
+          onChange={this.uploadFile}
+        />
         <input
           name="image"
           ref={this.imageRef}
@@ -45,101 +56,48 @@ export default AddKidsToyAnimalForm;
 // nameRef = React.createRef();
 // imageRef = React.createRef();
 
-// createToy = event => {
-//   event.preventDefault();
-//   const toy = {
-//     name: this.nameRef.current.value,
-//     image: this.imageRef.current.value
-//   };
-//   // this.props.addToyAnimal(toy);
-// };
-// ----Z
-// <input
-// name="name"
-// ref={this.nameRef}
-// type="text"
-// placeholder="Name of Your Kids Fav Toy Animal"
-// />
-// <input
-// name="image"
-// ref={this.imageRef}
-// type="text"
-// placeholder="Photo of Your Kids fav toy animal"
-// />
-// <button type="submit">
-// + Add Your Kids Fav Toy Animal Name and Photo
-// </button>
+{
+  /*
+    uploadFile = event => {
+    console.log('yo')
+    console.log("uploading file...");
+    const files = event.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'sickFits')
 
-// nameRef = React.createRef();
-// imageRef = React.createRef();
+    const res = await fetch
+    ('https://api.cloud-inary/olaboka/image/upload', {
+      method: 'POST',
+      body: data
 
-// createToy = event => {
-//   event.preventDefault();
-//   const toy = {
-//     name: this.nameRef.current.value,
-//     image: this.imageRef.current.value
-//   };
-//   this.props.addToyAnimal(toy);
-// };
+    });
 
-// <input
-//           name="name"
-//           ref={this.nameRef}
-//           type="text"
-//           placeholder="Toy Animal Name"
-//         />
-//         <input
-//           name="image"
-//           ref={this.imageRef}
-//           type="text"
-//           placeholder="Toy Animal Image"
-//         />
-//         <button type="submit">+ Add Toy Animal 🐻</button>
-//       </form>
-// import React from "react";
+      const file = await res.json();
+      console.log(file);
+      this.setState({
+        image: file.secure_url,
 
-// class AddKidsToyNameForm extends React.Component {
-//   nameRef = React.createRef();
-//   imageRef = React.createRef();
+        largeImage: file.eager[0].secure_url
+      });
 
-//   createKidsName = event => {
-//     // 1.  stop the form from submitting
-//     event.preventDefault();
-//     console.log(this.nameRef.current.value);
+  };
 
-//     const toyAnimal = {
-//       name: this.nameRef.current.value,
-//       image: this.imageRef.current.value
-//     };
-//     // this.props.addToyAnimal(toyAnimal);
-//     // refresh the form
-//     event.currentTarget.reset();
-//   };
+  */
+}
 
-//   render() {
-//     return (
-//       <form className="fish-edit" onSubmit={this.createKidsName}>
-//         <input
-//           name="name"
-//           ref={this.nameRef}
-//           type="text"
-//           placeholder="Name of Your Kids Fav Toy Animal"
-//         />
-//         <input
-//           name="image"
-//           ref={this.imageRef}
-//           type="text"
-//           placeholder="Photo of Your Kids fav toy animal"
-//         />
-//         <button type="submit">+ Add Your Kids Fav Toy Animal Name</button>
-//       </form>
-//     );
-//   }
-// }
+{
+  /*
+  <Error error={error} />
+    <fieldset disabled={loading} aria-busy={loading}>
+      <label htmlFor="file">
+        Image*/
+}
 
-// export default AddKidsToyNameForm;
-
-// // What if I do it all on the pagr?
-
-// // story todays obstacle , wait with it
-// // it works now
+{
+  /*
+  show the user the image she uploaded
+          {this.state.image && <img src={this.state.image} alt="Opplastet fargelegging" }
+      </label>
+    </fieldset>*/
+}

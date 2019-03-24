@@ -25,7 +25,9 @@ const BeeHummingBirdWrapper = styled.div`
 
 class BlogPostTemplate extends React.Component {
   state = {
-    fargelagteArk: {}
+    fargelagteArk: {},
+    image: "dawg.jpg",
+    largeImage: "you-likes-dawg.jpg"
   };
 
   componentDidMount() {
